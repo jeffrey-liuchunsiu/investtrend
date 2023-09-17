@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/highestreturn": {
+      "name": "/highestreturn",
+      "lambdaFunction": "getHighestReturn",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

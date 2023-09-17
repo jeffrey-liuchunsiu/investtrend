@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "investTrend": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
