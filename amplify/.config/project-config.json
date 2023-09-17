@@ -7,11 +7,18 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "build",
-      "BuildCommand": "npm.cmd run-script build",
-      "StartCommand": "npm.cmd run-script start"
+<<<<<<< HEAD
+      "BuildCommand": "npm run-script build",
+      "StartCommand": "npm run-script start"
     }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+  }
+=======
+      "BuildCommand": "npm.cmd run-script build",
+  "StartCommand": "npm.cmd run-script start"
+}
+},
+"providers": [
+"awscloudformation"
+]
+>>>>>>> 76344f45325da8f4fdc040cb7e587f1d6ca57199
 }
