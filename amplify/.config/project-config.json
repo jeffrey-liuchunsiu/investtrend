@@ -1,7 +1,4 @@
 {
-  "providers": [
-    "awscloudformation"
-  ],
   "projectName": "investtrend",
   "version": "3.1",
   "frontend": "javascript",
@@ -10,8 +7,18 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "build",
+<<<<<<< HEAD
       "BuildCommand": "npm run-script build",
       "StartCommand": "npm run-script start"
     }
   }
+=======
+      "BuildCommand": "npm.cmd run-script build",
+  "StartCommand": "npm.cmd run-script start"
+}
+},
+"providers": [
+"awscloudformation"
+]
+>>>>>>> 76344f45325da8f4fdc040cb7e587f1d6ca57199
 }
