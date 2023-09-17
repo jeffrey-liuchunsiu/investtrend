@@ -1,0 +1,10 @@
+{
+  "resourceName": "mostRecentTrendChangeDate",
+  "tableName": "mostRecentTrendChangeDate",
+  "partitionKey": {
+    "fieldName": "ID",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
