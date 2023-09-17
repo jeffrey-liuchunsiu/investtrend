@@ -1,0 +1,14 @@
+{
+  "resourceName": "investTrend",
+  "tableName": "highestReturn",
+  "partitionKey": {
+    "fieldName": "ID",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "highestReturn",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
