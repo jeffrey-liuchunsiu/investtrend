@@ -51,8 +51,6 @@
       "service": "Lambda"
     }
   },
-<<<<<<< HEAD
-=======
   "parameters": {
     "AMPLIFY_function_getHighestReturn_deploymentBucketName": {
       "usedBy": [
@@ -71,7 +69,6 @@
       ]
     }
   },
->>>>>>> 76344f45325da8f4fdc040cb7e587f1d6ca57199
   "storage": {
     "investTrend": {
       "providerPlugin": "awscloudformation",

@@ -12,18 +12,14 @@
       "AmplifyAppId": "dr3kgxs9o87du"
     },
     "categories": {
-      "api": {
-        "investtrend": {},
-        "investTrendRestApi": {}
-      },
-      "storage": {
-        "investTrend": {}
-      },
       "function": {
         "getHighestReturn": {
           "deploymentBucketName": "amplify-investtrend-dev-142035-deployment",
           "s3Key": "amplify-builds/getHighestReturn-524f6c36543061643175-build.zip"
         }
+      },
+      "storage": {
+        "investTrend": {}
       }
     }
   }
