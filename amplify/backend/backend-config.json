@@ -9,6 +9,14 @@
           ],
           "category": "function",
           "resourceName": "getHighestReturn"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getMostRecentTrendChangeDate"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -49,6 +57,12 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "getMostRecentTrendChangeDate": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -67,10 +81,30 @@
           "resourceName": "getHighestReturn"
         }
       ]
+    },
+    "AMPLIFY_function_getMostRecentTrendChangeDate_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getMostRecentTrendChangeDate"
+        }
+      ]
+    },
+    "AMPLIFY_function_getMostRecentTrendChangeDate_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getMostRecentTrendChangeDate"
+        }
+      ]
     }
   },
   "storage": {
     "investTrend": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "mostRecentTrendChangeDate": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     }
