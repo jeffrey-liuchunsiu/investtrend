@@ -39,11 +39,9 @@
         }
       },
       "api": {
-        "testdocker": {},
         "investtrend": {},
-        "test2": {},
-        "runfiveyearshighestreturn": {},
-        "gethighestreturn": {}
+        "gethighestreturn": {},
+        "runhighestreturn": {}
       }
     }
   }

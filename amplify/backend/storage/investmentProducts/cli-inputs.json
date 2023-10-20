@@ -1,0 +1,10 @@
+{
+  "resourceName": "investmentProducts",
+  "tableName": "investment_products",
+  "partitionKey": {
+    "fieldName": "symbol",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

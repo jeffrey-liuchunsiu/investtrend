@@ -56,7 +56,7 @@
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
     },
-    "runfiveyearshighestreturn": {
+    "runhighestreturn": {
       "apiType": "REST",
       "build": true,
       "categoryPolicies": [],
@@ -85,70 +85,7 @@
         "permissions": {}
       },
       "providerPlugin": "awscloudformation",
-      "resourceName": "runfiveyearshighestreturn",
-      "restrictAccess": false,
-      "service": "ElasticContainer",
-      "skipHashing": false
-    },
-    "test2": {
-      "apiType": "REST",
-      "build": true,
-      "categoryPolicies": [],
-      "dependsOn": [
-        {
-          "attributes": [
-            "ClusterName",
-            "VpcId",
-            "VpcCidrBlock",
-            "SubnetIds",
-            "VpcLinkId",
-            "CloudMapNamespaceId"
-          ],
-          "category": "",
-          "resourceName": "NetworkStack"
-        }
-      ],
-      "deploymentMechanism": "FULLY_MANAGED",
-      "environmentMap": {},
-      "iamAccessUnavailable": true,
-      "imageSource": {
-        "template": "dockercompose-rest-express",
-        "type": "TEMPLATE"
-      },
-      "mutableParametersState": {
-        "permissions": {}
-      },
-      "providerPlugin": "awscloudformation",
-      "resourceName": "test2",
-      "restrictAccess": false,
-      "service": "ElasticContainer",
-      "skipHashing": false
-    },
-    "testdocker": {
-      "apiType": "REST",
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "ClusterName",
-            "VpcId",
-            "VpcCidrBlock",
-            "SubnetIds",
-            "VpcLinkId",
-            "CloudMapNamespaceId"
-          ],
-          "category": "",
-          "resourceName": "NetworkStack"
-        }
-      ],
-      "deploymentMechanism": "FULLY_MANAGED",
-      "iamAccessUnavailable": true,
-      "imageSource": {
-        "template": "dockercompose-rest-express",
-        "type": "TEMPLATE"
-      },
-      "providerPlugin": "awscloudformation",
-      "resourceName": "testdocker",
+      "resourceName": "runhighestreturn",
       "restrictAccess": false,
       "service": "ElasticContainer",
       "skipHashing": false

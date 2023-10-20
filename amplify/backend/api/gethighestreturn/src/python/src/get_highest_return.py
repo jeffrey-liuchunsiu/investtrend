@@ -62,6 +62,7 @@ def get_latest_items_by_symbol():
                     "symbol": item['symbol'],
                     "name":item['name'],
                     "roi": item['roi'],
+                    "created_at":item['created_at']
                 })
     print(result)
     return result

@@ -1,0 +1,14 @@
+{
+  "resourceName": "run5yearshighestreturn",
+  "tableName": "run5yearshighestreturn",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "roi",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

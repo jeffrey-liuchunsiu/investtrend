@@ -13,23 +13,7 @@ export type AmplifyDependentResourcesAttributes = {
       "GraphQLAPIIdOutput": "string",
       "GraphQLAPIKeyOutput": "string"
     },
-    "runfiveyearshighestreturn": {
-      "ApiName": "string",
-      "ClusterName": "string",
-      "ContainerNames": "string",
-      "PipelineName": "string",
-      "RootUrl": "string",
-      "ServiceName": "string"
-    },
-    "test2": {
-      "ApiName": "string",
-      "ClusterName": "string",
-      "ContainerNames": "string",
-      "PipelineName": "string",
-      "RootUrl": "string",
-      "ServiceName": "string"
-    },
-    "testdocker": {
+    "runhighestreturn": {
       "ApiName": "string",
       "ClusterName": "string",
       "ContainerNames": "string",
