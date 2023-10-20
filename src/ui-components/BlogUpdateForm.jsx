@@ -8,9 +8,10 @@
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Blog } from "../models";
 import { fetchByPath, validateField } from "./utils";
-import { DataStore } from "aws-amplify";
+import { API } from "aws-amplify";
+import { getBlog } from "../graphql/queries";
+import { updateBlog } from "../graphql/mutations";
 export default function BlogUpdateForm(props) {
   const {
     id: idProp,
@@ -39,7 +40,12 @@ export default function BlogUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Blog, idProp)
+        ? (
+            await API.graphql({
+              query: getBlog.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getBlog
         : blogModelProp;
       setBlogRecord(record);
     };
@@ -105,17 +111,22 @@ export default function BlogUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Blog.copyOf(blogRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await API.graphql({
+            query: updateBlog.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: blogRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

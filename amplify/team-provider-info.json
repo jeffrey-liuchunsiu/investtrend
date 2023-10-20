@@ -9,26 +9,41 @@
       "UnauthRoleName": "amplify-investtrend-dev-142035-unauthRole",
       "StackName": "amplify-investtrend-dev-142035",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:424001042826:stack/amplify-investtrend-dev-142035/52a63f60-5522-11ee-87d3-06a873afc1e6",
-      "AmplifyAppId": "dr3kgxs9o87du"
+      "AmplifyAppId": "dr3kgxs9o87du",
+      "NetworkStackS3Url": "https://s3.amazonaws.com/amplify-investtrend-dev-142035-deployment/amplify-cfn-templates/networkingStackTemplate.json"
     },
     "categories": {
-      "function": {
-        "getHighestReturn": {
-          "deploymentBucketName": "amplify-investtrend-dev-142035-deployment",
-          "s3Key": "amplify-builds/getHighestReturn-524f6c36543061643175-build.zip"
-        },
-        "getMostRecentTrendChangeDate": {
-          "deploymentBucketName": "amplify-investtrend-dev-142035-deployment",
-          "s3Key": "amplify-builds/getMostRecentTrendChangeDate-4d703236495735626443-build.zip"
-        }
-      },
       "storage": {
         "investTrend": {},
-        "mostRecentTrendChangeDate": {}
+        "investtrendroi": {},
+        "investmentProducts": {},
+        "run5yearshighestreturn": {},
+        "higestreturnOneYear": {}
+      },
+      "function": {
+        "test2": {
+          "deploymentBucketName": "amplify-investtrend-dev-142035-deployment",
+          "s3Key": "amplify-builds/test2-6f62687a48376f6e4276-build.zip"
+        },
+        "investtrendpandas": {
+          "deploymentBucketName": "amplify-investtrend-dev-142035-deployment",
+          "s3Key": "amplify-builds/investtrendpandas-LambdaLayerVersionfc716f85-build.zip"
+        },
+        "getYfinanceCryptoList": {
+          "deploymentBucketName": "amplify-investtrend-dev-142035-deployment",
+          "s3Key": "amplify-builds/getYfinanceCryptoList-682b56676a2f2f634373-build.zip"
+        },
+        "investtrendrequestshtml": {
+          "deploymentBucketName": "amplify-investtrend-dev-142035-deployment",
+          "s3Key": "amplify-builds/investtrendrequestshtml-LambdaLayerVersion2fda83fc-build.zip"
+        }
       },
       "api": {
+        "testdocker": {},
         "investtrend": {},
-        "investTrendRestApi": {}
+        "test2": {},
+        "runfiveyearshighestreturn": {},
+        "gethighestreturn": {}
       }
     }
   }

@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+yfinance = "==0.2.31"
+aws-wsgi = "==0.2.7"
+boto3 = "==1.28.62"
+flask = "==1.1.4"
+flask-cors = "==4.0.0"
+requests = "==2.31.0"
+matplotlib = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
+python_full_version = "3.8.2"

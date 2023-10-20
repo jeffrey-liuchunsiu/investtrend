@@ -8,9 +8,10 @@
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Comment } from "../models";
 import { fetchByPath, validateField } from "./utils";
-import { DataStore } from "aws-amplify";
+import { API } from "aws-amplify";
+import { getComment } from "../graphql/queries";
+import { updateComment } from "../graphql/mutations";
 export default function CommentUpdateForm(props) {
   const {
     id: idProp,
@@ -39,7 +40,12 @@ export default function CommentUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Comment, idProp)
+        ? (
+            await API.graphql({
+              query: getComment.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getComment
         : commentModelProp;
       setCommentRecord(record);
     };
@@ -105,17 +111,22 @@ export default function CommentUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Comment.copyOf(commentRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await API.graphql({
+            query: updateComment.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: commentRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

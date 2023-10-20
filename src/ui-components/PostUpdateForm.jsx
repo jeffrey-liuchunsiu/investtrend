@@ -8,9 +8,10 @@
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Post } from "../models";
 import { fetchByPath, validateField } from "./utils";
-import { DataStore } from "aws-amplify";
+import { API } from "aws-amplify";
+import { getPost } from "../graphql/queries";
+import { updatePost } from "../graphql/mutations";
 export default function PostUpdateForm(props) {
   const {
     id: idProp,
@@ -39,7 +40,12 @@ export default function PostUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Post, idProp)
+        ? (
+            await API.graphql({
+              query: getPost.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getPost
         : postModelProp;
       setPostRecord(record);
     };
@@ -105,17 +111,22 @@ export default function PostUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Post.copyOf(postRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await API.graphql({
+            query: updatePost.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: postRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

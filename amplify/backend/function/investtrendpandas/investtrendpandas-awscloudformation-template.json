@@ -1,0 +1,111 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Lambda layer resource stack creation using Amplify CLI",
+  "Parameters": {
+    "env": {
+      "Type": "String"
+    },
+    "deploymentBucketName": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
+    },
+    "description": {
+      "Type": "String",
+      "Default": ""
+    },
+    "runtimes": {
+      "Type": "List<String>"
+    }
+  },
+  "Resources": {
+    "LambdaLayerVersionfc716f85": {
+      "Type": "AWS::Lambda::LayerVersion",
+      "Properties": {
+        "CompatibleRuntimes": {
+          "Ref": "runtimes"
+        },
+        "Content": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        },
+        "Description": {
+          "Ref": "description"
+        },
+        "LayerName": {
+          "Fn::Sub": [
+            "investtrendpandas-${env}",
+            {
+              "env": {
+                "Ref": "env"
+              }
+            }
+          ]
+        }
+      },
+      "DeletionPolicy": "Delete",
+      "UpdateReplacePolicy": "Retain"
+    },
+    "LambdaLayerPermissionPrivatefc716f85": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": {
+          "Ref": "LambdaLayerVersionfc716f85"
+        },
+        "Principal": {
+          "Ref": "AWS::AccountId"
+        }
+      }
+    },
+    "LambdaLayerVersionbcc786a3": {
+      "Type": "AWS::Lambda::LayerVersion",
+      "Properties": {
+        "CompatibleRuntimes": [
+          "python3.8"
+        ],
+        "Content": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": "amplify-builds/investtrendpandas-LambdaLayerVersionbcc786a3-build.zip"
+        },
+        "Description": "Updated layer version 2023-10-15T13:21:49.206Z",
+        "LayerName": {
+          "Fn::Sub": [
+            "investtrendpandas-${env}",
+            {
+              "env": {
+                "Ref": "env"
+              }
+            }
+          ]
+        }
+      },
+      "DeletionPolicy": "Delete",
+      "UpdateReplacePolicy": "Retain"
+    },
+    "LambdaLayerPermissionPrivatebcc786a3": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": "arn:aws:lambda:ap-southeast-1:424001042826:layer:investtrendpandas-dev:1",
+        "Principal": {
+          "Ref": "AWS::AccountId"
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "Arn": {
+      "Value": {
+        "Ref": "LambdaLayerVersionfc716f85"
+      }
+    }
+  }
+}

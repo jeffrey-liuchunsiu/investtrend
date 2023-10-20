@@ -8,9 +8,9 @@
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Post } from "../models";
 import { fetchByPath, validateField } from "./utils";
-import { DataStore } from "aws-amplify";
+import { API } from "aws-amplify";
+import { createPost } from "../graphql/mutations";
 export default function PostCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -90,7 +90,14 @@ export default function PostCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Post(modelFields));
+          await API.graphql({
+            query: createPost.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -99,7 +106,8 @@ export default function PostCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

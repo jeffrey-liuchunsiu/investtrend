@@ -7,7 +7,6 @@
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { Comment } from "../models";
 export declare type ValidationResponse = {
     hasError: boolean;
     errorMessage?: string;
@@ -28,7 +27,7 @@ export declare type CommentUpdateFormProps = React.PropsWithChildren<{
     overrides?: CommentUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    comment?: Comment;
+    comment?: any;
     onSubmit?: (fields: CommentUpdateFormInputValues) => CommentUpdateFormInputValues;
     onSuccess?: (fields: CommentUpdateFormInputValues) => void;
     onError?: (fields: CommentUpdateFormInputValues, errorMessage: string) => void;

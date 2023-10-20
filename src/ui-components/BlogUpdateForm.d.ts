@@ -7,7 +7,6 @@
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { Blog } from "../models";
 export declare type ValidationResponse = {
     hasError: boolean;
     errorMessage?: string;
@@ -28,7 +27,7 @@ export declare type BlogUpdateFormProps = React.PropsWithChildren<{
     overrides?: BlogUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    blog?: Blog;
+    blog?: any;
     onSubmit?: (fields: BlogUpdateFormInputValues) => BlogUpdateFormInputValues;
     onSuccess?: (fields: BlogUpdateFormInputValues) => void;
     onError?: (fields: BlogUpdateFormInputValues, errorMessage: string) => void;

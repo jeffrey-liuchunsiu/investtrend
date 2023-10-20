@@ -1,25 +1,58 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "investTrendRestApi": {
-      "ApiId": "string",
+    "gethighestreturn": {
       "ApiName": "string",
-      "RootUrl": "string"
+      "ClusterName": "string",
+      "ContainerNames": "string",
+      "PipelineName": "string",
+      "RootUrl": "string",
+      "ServiceName": "string"
     },
     "investtrend": {
       "GraphQLAPIEndpointOutput": "string",
       "GraphQLAPIIdOutput": "string",
       "GraphQLAPIKeyOutput": "string"
+    },
+    "runfiveyearshighestreturn": {
+      "ApiName": "string",
+      "ClusterName": "string",
+      "ContainerNames": "string",
+      "PipelineName": "string",
+      "RootUrl": "string",
+      "ServiceName": "string"
+    },
+    "test2": {
+      "ApiName": "string",
+      "ClusterName": "string",
+      "ContainerNames": "string",
+      "PipelineName": "string",
+      "RootUrl": "string",
+      "ServiceName": "string"
+    },
+    "testdocker": {
+      "ApiName": "string",
+      "ClusterName": "string",
+      "ContainerNames": "string",
+      "PipelineName": "string",
+      "RootUrl": "string",
+      "ServiceName": "string"
     }
   },
   "function": {
-    "getHighestReturn": {
+    "getYfinanceCryptoList": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
     },
-    "getMostRecentTrendChangeDate": {
+    "investtrendpandas": {
+      "Arn": "string"
+    },
+    "investtrendrequestshtml": {
+      "Arn": "string"
+    },
+    "test2": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
@@ -28,7 +61,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "storage": {
-    "investTrend": {
+    "higestreturnOneYear": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",
@@ -38,12 +71,32 @@ export type AmplifyDependentResourcesAttributes = {
       "SortKeyType": "string",
       "StreamArn": "string"
     },
-    "mostRecentTrendChangeDate": {
+    "investmentProducts": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",
       "PartitionKeyType": "string",
       "Region": "string",
+      "StreamArn": "string"
+    },
+    "investtrendroi": {
+      "Arn": "string",
+      "Name": "string",
+      "PartitionKeyName": "string",
+      "PartitionKeyType": "string",
+      "Region": "string",
+      "SortKeyName": "string",
+      "SortKeyType": "string",
+      "StreamArn": "string"
+    },
+    "run5yearshighestreturn": {
+      "Arn": "string",
+      "Name": "string",
+      "PartitionKeyName": "string",
+      "PartitionKeyType": "string",
+      "Region": "string",
+      "SortKeyName": "string",
+      "SortKeyType": "string",
       "StreamArn": "string"
     }
   }

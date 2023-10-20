@@ -1,6 +1,6 @@
 projects:
   investtrend:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/investtrend/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:

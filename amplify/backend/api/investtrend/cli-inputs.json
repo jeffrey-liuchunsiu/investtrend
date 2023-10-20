@@ -4,15 +4,15 @@
     "apiName": "investtrend",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 365,
-      "apiKeyExpirationDate": "2024-09-16T06:32:09.720Z",
-      "keyDescription": "investtrendapikey"
+      "mode": "AWS_IAM"
     },
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "OPTIMISTIC_CONCURRENCY"
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2023-10-16T13:16:17.525Z",
+        "keyDescription": ""
       }
-    }
+    ]
   }
 }
