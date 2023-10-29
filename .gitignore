@@ -43,8 +43,4 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 **.sample
-src/ui-components
-ui-components
-myenv
-__pycache__
 #amplify-do-not-edit-end
