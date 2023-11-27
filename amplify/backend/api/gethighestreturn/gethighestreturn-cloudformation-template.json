@@ -138,50 +138,7 @@
                   {
                     "Ref": "AWS::URLSuffix"
                   },
-                  "/amplify-investtrend-dev-142035-api-gethighestreturn-express:latest"
-                ]
-              ]
-            },
-            "LogConfiguration": {
-              "LogDriver": "awslogs",
-              "Options": {
-                "awslogs-group": {
-                  "Ref": "expressContainerLogGroup818705B4"
-                },
-                "awslogs-stream-prefix": "ecs",
-                "awslogs-region": {
-                  "Ref": "AWS::Region"
-                }
-              }
-            },
-            "Name": "express",
-            "PortMappings": [
-              {
-                "ContainerPort": 8080,
-                "Protocol": "tcp"
-              }
-            ]
-          },
-          {
-            "Command": [],
-            "EntryPoint": [],
-            "Essential": true,
-            "Image": {
-              "Fn::Join": [
-                "",
-                [
-                  {
-                    "Ref": "AWS::AccountId"
-                  },
-                  ".dkr.ecr.",
-                  {
-                    "Ref": "AWS::Region"
-                  },
-                  ".",
-                  {
-                    "Ref": "AWS::URLSuffix"
-                  },
-                  "/amplify-investtrend-dev-142035-api-gethighestreturn-python:latest"
+                  "/amplify-investtrendv2-dev-234900-api-gethighestreturn-python:latest"
                 ]
               ]
             },
@@ -282,7 +239,7 @@
                     {
                       "Ref": "AWS::AccountId"
                     },
-                    ":repository/amplify-investtrend-dev-142035-api-gethighestreturn-express"
+                    ":repository/amplify-investtrendv2-dev-234900-api-gethighestreturn-python"
                   ]
                 ]
               }
@@ -291,65 +248,6 @@
               "Action": "ecr:GetAuthorizationToken",
               "Effect": "Allow",
               "Resource": "*"
-            },
-            {
-              "Action": [
-                "logs:CreateLogStream",
-                "logs:PutLogEvents"
-              ],
-              "Effect": "Allow",
-              "Resource": {
-                "Fn::Join": [
-                  "",
-                  [
-                    "arn:",
-                    {
-                      "Ref": "AWS::Partition"
-                    },
-                    ":logs:",
-                    {
-                      "Ref": "AWS::Region"
-                    },
-                    ":",
-                    {
-                      "Ref": "AWS::AccountId"
-                    },
-                    ":log-group:",
-                    {
-                      "Ref": "expressContainerLogGroup818705B4"
-                    },
-                    ":*"
-                  ]
-                ]
-              }
-            },
-            {
-              "Action": [
-                "ecr:BatchCheckLayerAvailability",
-                "ecr:GetDownloadUrlForLayer",
-                "ecr:BatchGetImage"
-              ],
-              "Effect": "Allow",
-              "Resource": {
-                "Fn::Join": [
-                  "",
-                  [
-                    "arn:",
-                    {
-                      "Ref": "AWS::Partition"
-                    },
-                    ":ecr:",
-                    {
-                      "Ref": "AWS::Region"
-                    },
-                    ":",
-                    {
-                      "Ref": "AWS::AccountId"
-                    },
-                    ":repository/amplify-investtrend-dev-142035-api-gethighestreturn-python"
-                  ]
-                ]
-              }
             },
             {
               "Action": [
@@ -393,26 +291,6 @@
         ]
       }
     },
-    "expressContainerLogGroup818705B4": {
-      "Type": "AWS::Logs::LogGroup",
-      "Properties": {
-        "LogGroupName": {
-          "Fn::Join": [
-            "",
-            [
-              "/ecs/",
-              {
-                "Ref": "rootStackName"
-              },
-              "-gethighestreturn-express"
-            ]
-          ]
-        },
-        "RetentionInDays": 30
-      },
-      "UpdateReplacePolicy": "Delete",
-      "DeletionPolicy": "Delete"
-    },
     "pythonContainerLogGroupAD7FB969": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
@@ -445,14 +323,6 @@
           }
         ],
         "SecurityGroupIngress": [
-          {
-            "CidrIp": {
-              "Ref": "NetworkStackVpcCidrBlock"
-            },
-            "FromPort": 8080,
-            "IpProtocol": "tcp",
-            "ToPort": 8080
-          },
           {
             "CidrIp": {
               "Ref": "NetworkStackVpcCidrBlock"
@@ -1007,7 +877,7 @@
                         {
                           "Ref": "AWS::AccountId"
                         },
-                        "\"},{\"name\":\"express_REPOSITORY_URI\",\"type\":\"PLAINTEXT\",\"value\":\"",
+                        "\"},{\"name\":\"python_REPOSITORY_URI\",\"type\":\"PLAINTEXT\",\"value\":\"",
                         {
                           "Ref": "AWS::AccountId"
                         },
@@ -1019,19 +889,7 @@
                         {
                           "Ref": "AWS::URLSuffix"
                         },
-                        "/amplify-investtrend-dev-142035-api-gethighestreturn-express\"},{\"name\":\"python_REPOSITORY_URI\",\"type\":\"PLAINTEXT\",\"value\":\"",
-                        {
-                          "Ref": "AWS::AccountId"
-                        },
-                        ".dkr.ecr.",
-                        {
-                          "Ref": "AWS::Region"
-                        },
-                        ".",
-                        {
-                          "Ref": "AWS::URLSuffix"
-                        },
-                        "/amplify-investtrend-dev-142035-api-gethighestreturn-python\"}]"
+                        "/amplify-investtrendv2-dev-234900-api-gethighestreturn-python\"}]"
                       ]
                     ]
                   }
@@ -2477,7 +2335,7 @@
       }
     },
     "ContainerNames": {
-      "Value": "express,python"
+      "Value": "python"
     },
     "ApiName": {
       "Value": "gethighestreturn"

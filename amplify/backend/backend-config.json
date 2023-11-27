@@ -3,7 +3,6 @@
     "gethighestreturn": {
       "apiType": "REST",
       "build": true,
-      "categoryPolicies": [],
       "dependsOn": [
         {
           "attributes": [
@@ -19,14 +18,10 @@
         }
       ],
       "deploymentMechanism": "FULLY_MANAGED",
-      "environmentMap": {},
       "iamAccessUnavailable": true,
       "imageSource": {
         "template": "dockercompose-rest-express",
         "type": "TEMPLATE"
-      },
-      "mutableParametersState": {
-        "permissions": {}
       },
       "providerPlugin": "awscloudformation",
       "resourceName": "gethighestreturn",
@@ -34,29 +29,7 @@
       "service": "ElasticContainer",
       "skipHashing": false
     },
-    "investtrend": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "apiKeyConfig": {
-                "apiKeyExpirationDate": "2023-10-16T13:16:17.525Z",
-                "apiKeyExpirationDays": 7,
-                "description": ""
-              },
-              "authenticationType": "API_KEY"
-            }
-          ],
-          "defaultAuthentication": {
-            "authenticationType": "AWS_IAM"
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
-    },
-    "runfiveyearshighestreturn": {
+    "getmostrecentchange": {
       "apiType": "REST",
       "build": true,
       "categoryPolicies": [],
@@ -85,12 +58,12 @@
         "permissions": {}
       },
       "providerPlugin": "awscloudformation",
-      "resourceName": "runfiveyearshighestreturn",
+      "resourceName": "getmostrecentchange",
       "restrictAccess": false,
       "service": "ElasticContainer",
       "skipHashing": false
     },
-    "test2": {
+    "testinvesttrendscheduleroi": {
       "apiType": "REST",
       "build": true,
       "categoryPolicies": [],
@@ -119,143 +92,121 @@
         "permissions": {}
       },
       "providerPlugin": "awscloudformation",
-      "resourceName": "test2",
-      "restrictAccess": false,
-      "service": "ElasticContainer",
-      "skipHashing": false
-    },
-    "testdocker": {
-      "apiType": "REST",
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "ClusterName",
-            "VpcId",
-            "VpcCidrBlock",
-            "SubnetIds",
-            "VpcLinkId",
-            "CloudMapNamespaceId"
-          ],
-          "category": "",
-          "resourceName": "NetworkStack"
-        }
-      ],
-      "deploymentMechanism": "FULLY_MANAGED",
-      "iamAccessUnavailable": true,
-      "imageSource": {
-        "template": "dockercompose-rest-express",
-        "type": "TEMPLATE"
-      },
-      "providerPlugin": "awscloudformation",
-      "resourceName": "testdocker",
+      "resourceName": "testinvesttrendscheduleroi",
       "restrictAccess": false,
       "service": "ElasticContainer",
       "skipHashing": false
     }
   },
   "function": {
-    "getYfinanceCryptoList": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "investtrendpandas": {
+    "investtrendv2findbest": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "LambdaLayer"
-    },
-    "investtrendrequestshtml": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer"
-    },
-    "test2": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_getYfinanceCryptoList_deploymentBucketName": {
+    "AMPLIFY_function_investtrendv2findbest_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "getYfinanceCryptoList"
+          "resourceName": "investtrendv2findbest"
         }
       ]
     },
-    "AMPLIFY_function_getYfinanceCryptoList_s3Key": {
+    "AMPLIFY_function_investtrendv2findbest_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "getYfinanceCryptoList"
+          "resourceName": "investtrendv2findbest"
         }
       ]
     },
-    "AMPLIFY_function_investtrendpandas_deploymentBucketName": {
+    "AMPLIFY_storage_higestreturnOneYeardev_arn": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "investtrendpandas"
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
         }
       ]
     },
-    "AMPLIFY_function_investtrendpandas_s3Key": {
+    "AMPLIFY_storage_higestreturnOneYeardev_partitionKeyName": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "investtrendpandas"
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
         }
       ]
     },
-    "AMPLIFY_function_investtrendrequestshtml_deploymentBucketName": {
+    "AMPLIFY_storage_higestreturnOneYeardev_partitionKeyType": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "investtrendrequestshtml"
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
         }
       ]
     },
-    "AMPLIFY_function_investtrendrequestshtml_s3Key": {
+    "AMPLIFY_storage_higestreturnOneYeardev_region": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "investtrendrequestshtml"
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
         }
       ]
     },
-    "AMPLIFY_function_test2_deploymentBucketName": {
+    "AMPLIFY_storage_higestreturnOneYeardev_sortKeyName": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "test2"
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
         }
       ]
     },
-    "AMPLIFY_function_test2_s3Key": {
+    "AMPLIFY_storage_higestreturnOneYeardev_sortKeyType": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "test2"
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_higestreturnOneYeardev_streamArn": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_higestreturnOneYeardev_tableName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "higestreturnOneYeardev"
         }
       ]
     }
   },
   "storage": {
-    "higestreturnOneYear": {
+    "higestreturnOneDay": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     },
-    "investmentProducts": {
+    "higestreturnOneWeek": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     },
-    "investtrendroi": {
+    "higestreturnOneYeardev": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB",
+      "serviceType": "imported"
+    },
+    "higestreturnThreeMonth": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     },
-    "run5yearshighestreturn": {
+    "highestreturnOneMonth": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     }

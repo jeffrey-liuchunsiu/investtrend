@@ -8,12 +8,7 @@ export type AmplifyDependentResourcesAttributes = {
       "RootUrl": "string",
       "ServiceName": "string"
     },
-    "investtrend": {
-      "GraphQLAPIEndpointOutput": "string",
-      "GraphQLAPIIdOutput": "string",
-      "GraphQLAPIKeyOutput": "string"
-    },
-    "runfiveyearshighestreturn": {
+    "getmostrecentchange": {
       "ApiName": "string",
       "ClusterName": "string",
       "ContainerNames": "string",
@@ -21,15 +16,7 @@ export type AmplifyDependentResourcesAttributes = {
       "RootUrl": "string",
       "ServiceName": "string"
     },
-    "test2": {
-      "ApiName": "string",
-      "ClusterName": "string",
-      "ContainerNames": "string",
-      "PipelineName": "string",
-      "RootUrl": "string",
-      "ServiceName": "string"
-    },
-    "testdocker": {
+    "testinvesttrendscheduleroi": {
       "ApiName": "string",
       "ClusterName": "string",
       "ContainerNames": "string",
@@ -39,29 +26,12 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "getYfinanceCryptoList": {
-      "Arn": "string",
-      "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
-      "Name": "string",
-      "Region": "string"
-    },
-    "investtrendpandas": {
+    "investtrendv2findbest": {
       "Arn": "string"
-    },
-    "investtrendrequestshtml": {
-      "Arn": "string"
-    },
-    "test2": {
-      "Arn": "string",
-      "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
-      "Name": "string",
-      "Region": "string"
     }
   },
   "storage": {
-    "higestreturnOneYear": {
+    "higestreturnOneDay": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",
@@ -71,15 +41,7 @@ export type AmplifyDependentResourcesAttributes = {
       "SortKeyType": "string",
       "StreamArn": "string"
     },
-    "investmentProducts": {
-      "Arn": "string",
-      "Name": "string",
-      "PartitionKeyName": "string",
-      "PartitionKeyType": "string",
-      "Region": "string",
-      "StreamArn": "string"
-    },
-    "investtrendroi": {
+    "higestreturnOneWeek": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",
@@ -89,7 +51,17 @@ export type AmplifyDependentResourcesAttributes = {
       "SortKeyType": "string",
       "StreamArn": "string"
     },
-    "run5yearshighestreturn": {
+    "higestreturnThreeMonth": {
+      "Arn": "string",
+      "Name": "string",
+      "PartitionKeyName": "string",
+      "PartitionKeyType": "string",
+      "Region": "string",
+      "SortKeyName": "string",
+      "SortKeyType": "string",
+      "StreamArn": "string"
+    },
+    "highestreturnOneMonth": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",
