@@ -43,5 +43,8 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 **.sample
+<<<<<<< HEAD
 myenv
+=======
+>>>>>>> cd60fc4fa928aa6f3b3f53481ea2a0bdeb98aff8
 #amplify-do-not-edit-end
